@@ -4,14 +4,15 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
     "chai": "^4.2.0",
     "coveralls": "^3.0.2",
-    "express": "^4.16.4",
     "mocha": "^5.2.0",
     "nyc": "^13.1.0",
     "supertest": "^3.3.0"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "node app.js",
     "test": "nyc mocha --exit",
@@ -20,8 +21,12 @@
   },
   "keywords": [
     "microservice",
-    "expressjs",
-    "nodejs"
+    "mocha",
+    "sample-app",
+    "supertest",
+    "node",
+    "nodejs",
+    "expressjs"
   ],
   "author": "Bryan Chua",
   "license": "ISC"

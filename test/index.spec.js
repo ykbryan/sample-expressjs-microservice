@@ -1,5 +1,7 @@
 const request = require('supertest')
 const server = require('../app');
+const chai = require('chai');
+const should = chai.should();
 
 describe('expects 200', () => {
   it('/ should 200 without error', function (done) {
@@ -36,6 +38,7 @@ describe('expects json', () => {
       .expect('Content-Type', /json/)
       .end(function (err, res) {
         if (err) return done(err)
+        res.body.should.have.property('success');
         done()
       });
   })

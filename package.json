@@ -4,14 +4,19 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.2",
     "express": "^4.16.4",
     "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
     "supertest": "^3.3.0"
   },
   "devDependencies": {},
   "scripts": {
     "start": "node app.js",
-    "test": "mocha --exit"
+    "test": "nyc mocha --exit",
+    "test:watch": "mocha -w",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [
     "microservice",

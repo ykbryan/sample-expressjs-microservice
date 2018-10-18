@@ -2,3 +2,5 @@
 */.DS_Store
 node_modules/*
 */node_modules/*
+.nyc_output
+.nyc_output/*

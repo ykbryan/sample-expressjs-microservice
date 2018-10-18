@@ -15,6 +15,12 @@ app.use(function (req, res, next) {
  * Example get method *
  **********************/
 
+app.get('/', function (req, res) {
+  // Add your code here
+  // Return the API Gateway event and query string parameters for example
+  res.json({ success: 'get call succeed!', url: req.url });
+});
+
 app.get('/products', function (req, res) {
   // Add your code here
   // Return the API Gateway event and query string parameters for example
@@ -68,9 +74,9 @@ app.delete('/products/*', function (req, res) {
   res.json({ success: 'delete call succeed!', url: req.url });
 });
 
-app.listen(port, function () {
+const server = app.listen(port, function () {
   console.log("App started")
 });
 
 // Export the app object.
-// module.exports = app
+module.exports = server

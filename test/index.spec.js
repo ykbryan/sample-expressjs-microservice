@@ -32,7 +32,7 @@ describe('expects 404', () => {
 })
 
 describe('expects json', () => {
-  it('/products should 200 without error', function (done) {
+  it('/products output json without error', function (done) {
     request(server)
       .get('/products')
       .expect('Content-Type', /json/)
@@ -40,7 +40,40 @@ describe('expects json', () => {
         if (err) return done(err)
         res.body.should.have.property('success');
         done()
-      });
+      })
+  })
+
+  it('/products output json correctly', function (done) {
+    request(server)
+      .get('/products')
+      .expect('Content-Type', /json/)
+      .end(function (err, res) {
+        if (err) return done(err)
+        res.body.success.should.equal('get call succeed!')
+        done()
+      })
+  })
+
+  it('/products/1 output json without error', function (done) {
+    request(server)
+      .get('/products/1')
+      .expect('Content-Type', /json/)
+      .end(function (err, res) {
+        if (err) return done(err)
+        res.body.should.have.property('success');
+        done()
+      })
+  })
+
+  it('/products/1 output json correctly', function (done) {
+    request(server)
+      .get('/products/1')
+      .expect('Content-Type', /json/)
+      .end(function (err, res) {
+        if (err) return done(err)
+        res.body.success.should.equal('get call succeed!')
+        done()
+      })
   })
 })
 

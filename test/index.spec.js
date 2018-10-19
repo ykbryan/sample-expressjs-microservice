@@ -37,7 +37,7 @@ describe('expects json', () => {
       })
   })
 
-  it('/products output json correctly', function (done) {
+  it('/products output json with correct value', function (done) {
     request(server)
       .get('/products')
       .expect('Content-Type', /json/)
@@ -59,7 +59,7 @@ describe('expects json', () => {
       })
   })
 
-  it('/products/1 output json correctly', function (done) {
+  it('/products/1 output json with correct value', function (done) {
     request(server)
       .get('/products/1')
       .expect('Content-Type', /json/)

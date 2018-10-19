@@ -23,12 +23,6 @@ describe('expects 404', () => {
       .get('/login')
       .expect(404, done);
   })
-
-  it('/products should 200 without error', function (done) {
-    request(server)
-      .get('/')
-      .expect(200, done);
-  })
 })
 
 describe('expects json', () => {

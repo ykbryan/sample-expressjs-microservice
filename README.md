@@ -33,4 +33,5 @@ Run `npm start` in your *terminal*
 ## References
 
 [Docker Hub](https://hub.docker.com/r/bryanchua/sample-expressjs-microservice/)
+
 [Docker Docs](https://docs.docker.com/get-started/part2/#run-the-app)

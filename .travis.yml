@@ -6,5 +6,4 @@ install:
   - npm install
 script:
   - npm test
-  - echo $DOCKER_USERNAME
   - npm run coverage

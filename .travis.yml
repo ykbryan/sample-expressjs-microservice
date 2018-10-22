@@ -3,4 +3,5 @@ node_js:
   - "node"
 script:
   - npm test
+  - echo TEST
 after_success: npm run coverage

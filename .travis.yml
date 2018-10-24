@@ -10,10 +10,9 @@ script:
   - npm test
   - npm run coverage
 after_success:
-  - echo currently running on $TRAVIS_BRANCH / $TRAVIS_PULL_REQUEST
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
       IMAGE_TAG=$(echo $TRAVIS_COMMIT | cut -c 1-7)	
-      echo Building the Docker image $DOCKER_HUB_URL
+      echo Building the Docker image...	
       docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD;
       docker build -t $DOCKER_HUB_URL:latest .
       docker tag $DOCKER_HUB_URL:latest $DOCKER_HUB_URL:$IMAGE_TAG

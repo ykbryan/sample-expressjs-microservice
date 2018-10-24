@@ -20,6 +20,7 @@
     "start": "node app.js",
     "test": "nyc mocha --exit",
     "test:watch": "mocha -w",
+    "lint": "./node_modules/.bin/eslint app.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [

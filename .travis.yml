@@ -10,6 +10,7 @@ script:
   - echo $TRAVIS_PULL_REQUEST
   - echo $TRAVIS_BRANCH
   - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+      npm run lint;
       npm test;
       npm run coverage;
     fi

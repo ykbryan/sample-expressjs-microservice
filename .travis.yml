@@ -12,7 +12,7 @@ script:
   - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
       npm test;
       npm run coverage;
-    else
+    else;
       exit 0;
     fi
   - if [[ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]]; then
@@ -23,7 +23,7 @@ script:
       docker tag $DOCKER_HUB_URL:latest $DOCKER_HUB_URL:$IMAGE_TAG;
       docker push $DOCKER_HUB_URL;
       echo Docker image pushed;
-    else
+    else;
       exit 0;
     fi
 after_success:

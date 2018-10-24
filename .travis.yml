@@ -1,11 +1,5 @@
 language: node_js
 sudo: false
-branches:
-  only:
-    - master
-    - "/^feature.*$/"
-    - "/^(hot)?fix.*$/"
-    - "/^v[0-9].*$/"
 git:
   depth: 1
 node_js:

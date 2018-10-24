@@ -15,7 +15,7 @@ script:
     else;
       exit 0;
     fi
-  - if [[ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]]; then
+  - if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
       IMAGE_TAG=$(echo $TRAVIS_COMMIT | cut -c 1-7)	;
       echo Building the Docker image...	;
       docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD;

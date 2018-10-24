@@ -11,7 +11,7 @@ script:
   - npm run coverage
 after_success:
   - echo currently running on $TRAVIS_BRANCH
-  - if [ "$TRAVIS_BRANCH" != "master" ]; then
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
       IMAGE_TAG=$(echo $TRAVIS_COMMIT | cut -c 1-7)	
       echo Building the Docker image to $DOCKER_HUB_URL...	
       docker login -u $DOCKER_USERNAME --password-stdin $DOCKER_PASSWORD

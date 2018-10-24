@@ -7,9 +7,13 @@ node_js:
 install: 
   - npm install
 script:
-  - npm test
-  - npm run coverage
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+  - echo $TRAVIS_PULL_REQUEST
+  - echo $TRAVIS_BRANCH
+  - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+      npm test;
+      npm run coverage;
+    fi
+  - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
       IMAGE_TAG=$(echo $TRAVIS_COMMIT | cut -c 1-7)	;
       echo Building the Docker image...	;
       docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD;

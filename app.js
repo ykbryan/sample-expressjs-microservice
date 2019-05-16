@@ -1,4 +1,5 @@
 const express = require('express');
+require('env');
 
 // declare a new express app
 const app = express();
@@ -16,58 +17,58 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
   // Add your code here
   // Return the API Gateway event and query string parameters for example
-  res.json({ success: 'get call succeed!', url: req.url });
+  res.json({ success: 'get call succeed!', url: req.url, service: process.env.SERVICENAME });
 });
 
 app.get('/products', (req, res) => {
   // Add your code here
   // Return the API Gateway event and query string parameters for example
-  res.json({ success: 'get call succeed!', url: req.url });
+  res.json({ success: 'get call succeed!', url: req.url, service: process.env.SERVICENAME });
 });
 
 app.get('/products/*', (req, res) => {
   // Add your code here
-  res.json({ success: 'get call succeed!', url: req.url });
+  res.json({ success: 'get call succeed!', url: req.url, service: process.env.SERVICENAME });
 });
 
 // Example post method
 
 app.post('/products', (req, res) => {
   // Add your code here
-  res.json({ success: 'post call succeed!', url: req.url, body: req.body });
+  res.json({ success: 'post call succeed!', url: req.url, service: process.env.SERVICENAME, body: req.body });
 });
 
 app.post('/products/*', (req, res) => {
   // Add your code here
-  res.json({ success: 'post call succeed!', url: req.url, body: req.body });
+  res.json({ success: 'post call succeed!', url: req.url, service: process.env.SERVICENAME, body: req.body });
 });
 
 // Example put method
 
 app.put('/products', (req, res) => {
   // Add your code here
-  res.json({ success: 'put call succeed!', url: req.url, body: req.body });
+  res.json({ success: 'put call succeed!', url: req.url, service: process.env.SERVICENAME, body: req.body });
 });
 
 app.put('/products/*', (req, res) => {
   // Add your code here
-  res.json({ success: 'put call succeed!', url: req.url, body: req.body });
+  res.json({ success: 'put call succeed!', url: req.url, service: process.env.SERVICENAME, body: req.body });
 });
 
 // Example delete method
 
 app.delete('/products', (req, res) => {
   // Add your code here
-  res.json({ success: 'delete call succeed!', url: req.url });
+  res.json({ success: 'delete call succeed!', url: req.url, service: process.env.SERVICENAME });
 });
 
 app.delete('/products/*', (req, res) => {
   // Add your code here
-  res.json({ success: 'delete call succeed!', url: req.url });
+  res.json({ success: 'delete call succeed!', url: req.url, service: process.env.SERVICENAME });
 });
 
 const server = app.listen(port, () => {
-  // console.log('App started');
+  console.log('App started');
 });
 
 // Export the app object.

@@ -23,10 +23,6 @@ phases:
       - export AWS_SESSION_TOKEN="$(echo ${CREDENTIALS} | jq -r '.Credentials.SessionToken')"
       - export AWS_EXPIRATION=$(echo ${CREDENTIALS} | jq -r '.Credentials.Expiration')
       - aws eks update-kubeconfig --name $EKS_CLUSTER_NAME
-      - cat $HOME/.aws/config
-      - cat $HOME/.aws/credentials
-      - cat $HOME/.kube/config
-      - cat deployment.yml
       - kubectl apply -f deployment.yml
 
 artifacts:

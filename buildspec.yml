@@ -30,3 +30,4 @@ artifacts:
     files: 
       - imagedefinitions.json
       - deployment.yml
+      - buildspec-k8s.yml

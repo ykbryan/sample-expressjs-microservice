@@ -3,12 +3,12 @@ kind: Deployment
 metadata:
   name: expressjs-app
   labels:
-    app: expressjs
+    app: expressjs-app
   namespace: default
 spec:
   selector:
     matchLabels:
-      app: expressjs
+      app: expressjs-app
   replicas: 1
   strategy:
     rollingUpdate:
@@ -18,7 +18,7 @@ spec:
   template:
     metadata:
       labels:
-        app: expressjs
+        app: expressjs-app
     spec:
       affinity:
         nodeAffinity:
@@ -40,6 +40,9 @@ spec:
       containers:
       - image: CONTAINER_IMAGE
         name: expressjs-app
+        env:
+          - name: SERVICENAME
+            value: 
         ports:
         - containerPort: 3000
           protocol: TCP
